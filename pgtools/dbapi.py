@@ -126,6 +126,17 @@ class TextArg(BaseFuncArg):
     param_type = (six.string_types, )
 
 
+class BooleanArg(BaseFuncArg):
+    """Boolean Parameters formatter/validator class.
+    """
+
+    formatter = '{}'
+    param_type = (bool, )
+
+    def format(self):
+        return str(self.param)
+
+
 class ArrayArg(BaseFuncArg):
     """Array Parameters formatter/validator class.
     """
@@ -152,6 +163,7 @@ FUNC_TYPES = {
     float: NumArg,
     str: TextArg,
     dict: JSONArg,
+    bool: BooleanArg,
     list: ArrayArg,
     tuple: ArrayArg
 }
