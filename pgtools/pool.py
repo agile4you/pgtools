@@ -86,10 +86,10 @@ class ClientPool(object):
 
 
     Attributes:
-        maxsize (int): Greenlet poolsize.
+        maxsize (int): Greenlet pool size.
     """
 
-    def __init__(self, maxsize=100):
+    def __init__(self, maxsize=20):
         if not isinstance(maxsize, integer_types):
             raise TypeError('Expected integer, got %r' % (maxsize, ))
         self.maxsize = maxsize
